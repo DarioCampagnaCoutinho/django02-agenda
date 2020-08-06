@@ -14,11 +14,11 @@ class Contato(models.Model):
     sobrenome = models.CharField(max_length=250, blank=True)
     telefone = models.CharField(max_length=22)
     email = models.CharField(max_length=250, blank=True)
-    data_criacao = models.DateTimeField(default=timezone)
+    data_criacao = models.DateTimeField(timezone.now())
     descricao = models.TextField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return self.nome + ' ' + self.sobrenome
+        return self.nome
 
 

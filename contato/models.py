@@ -14,7 +14,7 @@ class Contato(models.Model):
     sobrenome = models.CharField(max_length=250, blank=True)
     telefone = models.CharField(max_length=22)
     email = models.CharField(max_length=250, blank=True)
-    data_criacao = models.DateTimeField(timezone.now())
+    data_criacao = models.DateTimeField()
     descricao = models.TextField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
 

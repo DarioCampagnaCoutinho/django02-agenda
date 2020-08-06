@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+from django.utils.timezone import now
 
 
 class Categoria(models.Model):
@@ -14,7 +14,7 @@ class Contato(models.Model):
     sobrenome = models.CharField(max_length=250, blank=True)
     telefone = models.CharField(max_length=22)
     email = models.CharField(max_length=250, blank=True)
-    data_criacao = models.DateTimeField()
+    data_criacao = models.DateTimeField(default=now)
     descricao = models.TextField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
 
